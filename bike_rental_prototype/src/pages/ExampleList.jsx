@@ -31,17 +31,6 @@ export default function ExampleList() {
           </tr>
         </thead>
         <tbody>
-          {/* {exampleRows.map((row, i) => (
-            <TableRow
-              key={i}
-              row={row}
-              showPred={showPred}
-              showTips={showTips}
-              showActual={true}
-              highlightEvent={highlightEvent}
-            />
-          ))} */}
-
           {exampleRows.map((row, i) => {
             // map readable labels
             const readableRow = {
