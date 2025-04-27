@@ -165,7 +165,7 @@ export default function InitialPrediction() {
     sessionStorage.setItem('pre_q1', conf);
 
     // 3) navigate onward
-    navigate(`/examples/${condition}`);
+    navigate(`/task/${condition}`);
   };
 
   const highlightEvent = true;
@@ -196,10 +196,8 @@ export default function InitialPrediction() {
               ...row,
               season: mapping.season[row.season] || row.season,
               holiday: mapping.holiday[row.holiday] || row.holiday,
-              weather:
-                mapping.weathersit[row.weathersit || row.weather] ||
-                row.weathersit ||
-                row.weather,
+              weathersit: mapping.weathersit[row.weathersit] || row.weathersit,
+
               event: mapping.event[row.event] || row.event
             };
             return (
@@ -239,7 +237,7 @@ export default function InitialPrediction() {
           className={`px-4 py-2 rounded-lg ${canProceed ? 'bg-blue-600 text-white' : 'bg-gray-400 text-gray-700 cursor-not-allowed'
             }`}
         >
-          Continue to Guided Examples →
+          Continue to Task Examples →
         </button>
       </div>
     </div>

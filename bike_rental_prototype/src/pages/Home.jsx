@@ -14,8 +14,9 @@ export default function Home() {
   };
 
   const getStartPath = (c) => {
-    if (c === 'A') return `/examples/${c}`;
-    return `/initial/${c}`;
+    return `/examples/${c}`;
+
+    // return `/initial/${c}`;
   };
 
   return (

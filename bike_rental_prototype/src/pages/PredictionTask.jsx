@@ -297,13 +297,13 @@ export default function PredictionTask() {
     }
   }, [condition]);
 
-  const handleChange = (idx, val, hasEvent) => {
+  const handleChange = (idx, val, hasEvent, eventName) => {
     const copy = [...inputs];
     copy[idx] = val;
     setInputs(copy);
 
     if (hasEvent && !sessionStorage.getItem(`event_popup_seen_${idx}_${condition}`)) {
-      alert('Event - “Midnights at MetLife”, MetLife Stadium, East Rutherford NJ (capacity ≈ 82 500)');
+      alert(`Event - ${eventName}`);
       sessionStorage.setItem(`event_popup_seen_${idx}_${condition}`, '1');
     }
   };
@@ -354,7 +354,7 @@ export default function PredictionTask() {
               ...row,
               season: mapping.season[row.season] || row.season,
               holiday: mapping.holiday[row.holiday] || row.holiday,
-              weather: mapping.weathersit[row.weathersit || row.weather] || row.weathersit || row.weather,
+              weathersit: mapping.weathersit[row.weathersit || row.weather] || row.weathersit || row.weather,
               event: mapping.event[row.event] || row.event,
               pred: showPred ? aiPredictions[i] : undefined
             };
@@ -366,7 +366,7 @@ export default function PredictionTask() {
                 showPred={showPred}
                 showTips={showTips}
                 highlightEvent={highlightEvent}
-                handleChange={val => handleChange(i, val, row.event === 1)}
+                handleChange={val => handleChange(i, val, row.event === 1, row?.eventName)}
                 userValue={inputs[i]}
               />
             );

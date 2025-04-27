@@ -19,8 +19,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<NamePage />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/initial/:condition" element={<InitialPrediction />} />
           <Route path="/examples/:condition" element={<ExampleList />} />
+          <Route path="/initial/:condition" element={<InitialPrediction />} />
           <Route path="/task/:condition" element={<PredictionTask />} />
           <Route path="/survey/:condition" element={<Survey />} />
           <Route path="*" element={<Navigate to="/" />} />

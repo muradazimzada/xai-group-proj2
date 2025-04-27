@@ -76,7 +76,13 @@ export default function ExampleList() {
 
       <div className="flex justify-between mt-6">
         <Link to="/" className="text-blue-600 underline">← Back Home</Link>
-        <button onClick={() => navigate(`/task/${condition}`)} className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+        <button onClick={() => {
+          if (condition === 'A') navigate('/task/A')
+          else
+            navigate(`/initial/${condition}`)
+          // navigate(`/task/${condition}`)
+        }
+        } className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
           Continue to Main Task →
         </button>
       </div>

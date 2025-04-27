@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+env/
+venv/
+.venv/
+*.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+
+
+# Logs
+*.log
+
+# Results
+
+
+# Node / frontend
+node_modules/
+dist/
+build/
+
+# OS / Editors
+.DS_Store
+.vscode/
+.idea/
+*.swp
