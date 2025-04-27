@@ -136,14 +136,14 @@ export default function InitialPrediction() {
   const [inputs, setInputs] = useState(Array(taskRows.length).fill(''));
   const [conf, setConf] = useState('');
 
-  const handleChange = (idx, val, hasEvent) => {
+  const handleChange = (idx, val, hasEvent, eventName) => {
     const copy = [...inputs];
     copy[idx] = val;
     setInputs(copy);
 
-    if (hasEvent && !sessionStorage.getItem(`event_popup_seen_pre_${idx}_${condition}`)) {
-      alert('Event - “Global Harmony” Benefit Concert, Wembley Stadium, London (capacity ≈ 90 000)');
-      sessionStorage.setItem(`event_popup_seen_pre_${idx}_${condition}`, '1');
+    if (hasEvent) {
+      alert(`Event - ${eventName}`);
+      // sessionStorage.setItem(`event_popup_seen_pre_${idx}_${condition}`, '1');
     }
   };
 
@@ -205,7 +205,7 @@ export default function InitialPrediction() {
                 key={i}
                 row={readableRow}
                 highlightEvent={highlightEvent}
-                handleChange={val => handleChange(i, val, row.event === 1)}
+                handleChange={val => handleChange(i, val, row.event === 1, row.eventName)}
                 userValue={inputs[i]}
               />
             );
